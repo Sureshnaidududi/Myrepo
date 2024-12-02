@@ -16,3 +16,4 @@ jobs:
     - name: Display Secrets
       run: |
         echo "REGISTRY_USERNAME: ${{ secrets.REGISTRY_USERNAME }}"
+        echo "REGISTRY_PASSWORD: ${{ secrets.REGISTRY_PASSWORD }}"
