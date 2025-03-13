@@ -1,20 +1,37 @@
-name: Display Secrets
+# name: Display Secrets
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   display-secrets:
+#     runs-on: ubuntu-latest
+#     environment: test
+
+#     steps:
+#     - name: Checkout code
+#       uses: actions/checkout@v2
+
+#     - name: Display Secrets
+#       run: |
+#         echo "REGISTRY_USERNAME: ${{ secrets.REGISTRY_USERNAME }}"
+#         echo "REGISTRY_PASSWORD: ${{ secrets.REGISTRY_PASSWORD }}"
+
+name: Reusable Workflow
+
+on: workflow_call
 
 jobs:
-  display-secrets:
+  example_job:
     runs-on: ubuntu-latest
     environment: test
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Display Secrets
-      run: |
-        echo "REGISTRY_USERNAME: ${{ secrets.REGISTRY_USERNAME }}"
-        echo "REGISTRY_PASSWORD: ${{ secrets.REGISTRY_PASSWORD }}"
+      - name: Display Secrets
+        run: |
+          echo "REGISTRY_USERNAME: ${{ secrets.REGISTRY_USERNAME }}"
+          echo "REGISTRY_PASSWORD: ${{ secrets.REGISTRY_PASSWORD }}"
