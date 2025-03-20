@@ -35,3 +35,4 @@ jobs:
         run: |
           echo "REGISTRY_USERNAME: ${{ secrets.REGISTRY_USERNAME }}"
           echo "REGISTRY_PASSWORD: ${{ secrets.REGISTRY_PASSWORD }}"
+          ls -lrt ./.
